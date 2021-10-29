@@ -1,8 +1,8 @@
-import { initializeApp } from 'firebase/app';
-import 'firebase/storage';
-import { getFirestore } from 'firebase/firestore/lite';
-import { getAuth } from "firebase/auth";
-import { getStorage,  ref, uploadBytes } from "firebase/storage"
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import 'firebase/compat/storage'
+
 
 
 const firebaseConfig = {
@@ -15,17 +15,12 @@ const firebaseConfig = {
     measurementId: "G-GBKJ33FLJK"
   };
 
-  const app =initializeApp(firebaseConfig);
+ firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  const storage = firebase.storage();
+ 
 
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-  const storage = getStorage(app);
-  const storageref=ref(storage,'images')
-
-  function upload()
-  {
-    
-  }
 
 
   export {auth, db, storage}
