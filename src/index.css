@@ -9,3 +9,11 @@ html,body {
     width:100%;
     height: 100vh;
     font-family:'Open Sans','sans-serif';}
+
+    @media(max-width:760px)
+    {
+        .mybtn
+        {
+            width:100%;
+        }
+    }
