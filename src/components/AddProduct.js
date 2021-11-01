@@ -44,7 +44,7 @@ export const AddProduct = () => {
         db.collection('Products').add({
           ProductName:productName,
           ProductPrice:Number(productPrice),
-          productImg:url
+          ProductImg:url
         })
       })
       .then(()=>{
