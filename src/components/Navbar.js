@@ -1,12 +1,13 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "react-icons-kit";
 import { cart } from "react-icons-kit/entypo/cart";
 import { useHistory } from "react-router";
 import { auth } from "../config/Config";
-
+import { CartContext } from "../global/CartContext";
 export const Navbar = ({ user }) => {
   const history = useHistory();
+  const {totalQty}=useContext(CartContext);
   const logout = () => {
     auth.signOut().then(() => {
       history.push("/");
@@ -39,7 +40,9 @@ export const Navbar = ({ user }) => {
             <Link to="/cartproducts" className="navlinks">
               <Icon icon={cart} />
             </Link>
+            <span className='no-of-products'>{totalQty}</span>
           </span>
+          
           <span>
             <button className="logout-btn" onClick={logout}>
               LOGOUT
