@@ -325,3 +325,9 @@ h1 {
 .success-msg .home-link {
     color: #fff;
 }
+
+.error-msg{
+    color:red;
+    font-size:12px;
+    font-weight:600;
+}

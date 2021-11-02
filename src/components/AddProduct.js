@@ -9,6 +9,7 @@ export const AddProduct = () => {
   const[productPrice,setProductPrice]=useState(0)
   const[productImg,setProductImg]=useState(null)
   const[error,setError]=useState('')
+  const[submitted,setSubmitted]=useState(true);
 
   const types=['image/png','image/jpeg']//image types
 
@@ -52,6 +53,7 @@ export const AddProduct = () => {
         setProductPrice(0);
         setProductImg('');
         setError('');
+        setSubmitted(!submitted);
         document.getElementById('file').value='';
 
       })
@@ -66,7 +68,7 @@ export const AddProduct = () => {
             <br />
             <h2> Add Products </h2>
             <hr/>
-            <form auroComplete="off" classNmae='form-group' onSubmit={addProduct} >
+            {submitted && <form auroComplete="off" classNmae='form-group' onSubmit={addProduct} >
                 <label htmlFor="product-name">Product name</label>
                 <br/>
                 <input type="text" onChange={(e)=>setProductName(e.target.value)} className='form-control' required /> 
@@ -83,6 +85,9 @@ export const AddProduct = () => {
                 <button className="btn btn-success btn-md mybtn">ADD</button>
                 {error && <span>{error}</span>}
             </form>
+}
+
+{!submitted && <label style={{color:"green", textAlign:"center"}}>Product Added</label>}
 
         </div>
   ) 

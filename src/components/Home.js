@@ -4,11 +4,11 @@ import { Products } from './Products'
 import '../css/Home.css'
 
 
-export const Home = () =>
+export const Home = ({user}) =>
 {
     return (
         <div className='wrapper'>
-            <Navbar />
+            <Navbar user={user}/>
             <Products />
         </div>
     )

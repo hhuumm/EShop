@@ -3,7 +3,6 @@ import { ProductsContext } from "../global/ProductContext";
 
 export const Products = () => {
   const { products } = useContext(ProductsContext);
-  console.log(products)
 
   return (
     <>
