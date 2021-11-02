@@ -33,7 +33,7 @@ export const Navbar = ({ user }) => {
         <div className="rightside">
           <span>
             <Link to="/" className="navlinks">
-              {user}
+              {user.split(" ")[0]}
             </Link>
           </span>
           <span>
